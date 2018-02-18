@@ -1,0 +1,87 @@
+[cloudera@quickstart ~]$ hadoop jar DuplicatesMR.jar TweetCount /user/cloudera/Tweet_Messages.txt /user/cloudera/dups
+17/04/06 20:06:23 INFO client.RMProxy: Connecting to ResourceManager at /0.0.0.0:8032
+17/04/06 20:06:26 INFO input.FileInputFormat: Total input paths to process : 1
+17/04/06 20:06:26 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:862)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:600)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:789)
+17/04/06 20:06:26 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1281)
+	at java.lang.Thread.join(Thread.java:1355)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:862)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:600)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:789)
+17/04/06 20:06:26 INFO mapreduce.JobSubmitter: number of splits:1
+17/04/06 20:06:27 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1491527679312_0007
+17/04/06 20:06:28 INFO impl.YarnClientImpl: Submitted application application_1491527679312_0007
+17/04/06 20:06:28 INFO mapreduce.Job: The url to track the job: http://quickstart.cloudera:8088/proxy/application_1491527679312_0007/
+17/04/06 20:06:28 INFO mapreduce.Job: Running job: job_1491527679312_0007
+17/04/06 20:06:45 INFO mapreduce.Job: Job job_1491527679312_0007 running in uber mode : false
+17/04/06 20:06:45 INFO mapreduce.Job:  map 0% reduce 0%
+17/04/06 20:06:58 INFO mapreduce.Job:  map 100% reduce 0%
+17/04/06 20:07:12 INFO mapreduce.Job:  map 100% reduce 100%
+17/04/06 20:07:12 INFO mapreduce.Job: Job job_1491527679312_0007 completed successfully
+17/04/06 20:07:13 INFO mapreduce.Job: Counters: 49
+	File System Counters
+		FILE: Number of bytes read=5791
+		FILE: Number of bytes written=244415
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=86791
+		HDFS: Number of bytes written=1297
+		HDFS: Number of read operations=6
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=2
+	Job Counters 
+		Launched map tasks=1
+		Launched reduce tasks=1
+		Data-local map tasks=1
+		Total time spent by all maps in occupied slots (ms)=10905
+		Total time spent by all reduces in occupied slots (ms)=11359
+		Total time spent by all map tasks (ms)=10905
+		Total time spent by all reduce tasks (ms)=11359
+		Total vcore-seconds taken by all map tasks=10905
+		Total vcore-seconds taken by all reduce tasks=11359
+		Total megabyte-seconds taken by all map tasks=11166720
+		Total megabyte-seconds taken by all reduce tasks=11631616
+	Map-Reduce Framework
+		Map input records=830
+		Map output records=625
+		Map output bytes=4535
+		Map output materialized bytes=5791
+		Input split bytes=129
+		Combine input records=0
+		Combine output records=0
+		Reduce input groups=198
+		Reduce shuffle bytes=5791
+		Reduce input records=625
+		Reduce output records=198
+		Spilled Records=1250
+		Shuffled Maps =1
+		Failed Shuffles=0
+		Merged Map outputs=1
+		GC time elapsed (ms)=230
+		CPU time spent (ms)=1700
+		Physical memory (bytes) snapshot=352546816
+		Virtual memory (bytes) snapshot=3007934464
+		Total committed heap usage (bytes)=260575232
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters 
+		Bytes Read=86662
+	File Output Format Counters 
+		Bytes Written=1297
+[cloudera@quickstart ~]$ hadoop fs -get /user/cloudera/dups /home/cloudera/Documents
+
